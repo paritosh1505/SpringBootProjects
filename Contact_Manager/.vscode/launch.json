@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-Application<org.paritosh.scm>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.scm.org.paritosh.scm.Application",
+      "projectName": "org.paritosh.scm",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

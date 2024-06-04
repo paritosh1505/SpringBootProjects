@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base::parent(~{::.container},~{::title},~{::script})}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container text-4xl bg-fuchsia-800">
+      <h1 data-th-text="${test1}">first Spirng webapp</h1>
+      <a data-th-href="${test2}">Click to page</a>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat ipsam
+        maiores error vitae deserunt tempora eaque perspiciatis, qui praesentium
+        odit tempore atque accusamus exercitationem ut consectetur ipsum nostrum
+        aliquid iusto nam veniam, cupiditate laudantium enim consequuntur quasi.
+        Hic cupiditate suscipit eius distinctio sit quis consequuntur, aliquid,
+        cum, eos soluta perferendis.
+      </p>
+    </div>
+  </body>
+</html>

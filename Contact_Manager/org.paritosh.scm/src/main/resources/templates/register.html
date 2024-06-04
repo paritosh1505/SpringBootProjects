@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:insert="base::parent(~{::.service-page},~{::title},~{::script})"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="service-page">
+      <div class="grid grid-cols-12">
+        <div class="col-span-4"></div>
+        <div class="col-span-4">
+          <div
+            href="#"
+            class="block p-6 bg-white border border-solid border-black rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+          >
+            <h5
+              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
+              Registration Page
+            </h5>
+
+            <p
+              class="font-normal text-gray-700 dark:text-gray-400"
+              th:replace="messageAlert::alertMessage"
+            >
+              Save contact number on the cloud...
+            </p>
+            <form
+              data-th-action="@{'/doRegister'}"
+              th:object="${userDetail}"
+              method="POST"
+              novalidate
+            >
+              <div>
+                <label
+                  for="username"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="username"
+                  th:field="*{username}"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="UserName..."
+                  required
+                />
+              </div>
+
+              <p
+                th:if="${#fields.hasErrors('username')}"
+                th:errors="*{username}"
+                class="text-red-600 px-1 py-2"
+              ></p>
+
+              <div class="mt-3">
+                <label
+                  for="email"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  name="email"
+                  th:field="*{email}"
+                  id="email"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="name@company.com"
+                  required
+                />
+                <p
+                  th:if="${#fields.hasErrors('email')}"
+                  th:errors="*{email}"
+                  class="text-red-600 px-1 py-2"
+                ></p>
+              </div>
+              <div class="mt-3">
+                <label
+                  for="password"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  th:field="*{password}"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="Password..."
+                  required
+                />
+                <p
+                  th:if="${#fields.hasErrors('password')}"
+                  th:errors="*{password}"
+                  class="text-red-600 px-1 py-2"
+                ></p>
+              </div>
+              <div class="mt-3">
+                <label
+                  for="phoneNum"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Conatact Number</label
+                >
+                <input
+                  type="tel"
+                  id="telephone"
+                  th:field="*{phoneNumber}"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                  placeholder="Password..."
+                  required
+                />
+                <p
+                  th:if="${#fields.hasErrors('phoneNumber')}"
+                  th:errors="*{phoneNumber}"
+                  class="text-red-600 px-1 py-2"
+                ></p>
+              </div>
+              <div class="mt-3">
+                <label
+                  for="message"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Write about yourself</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  th:field="*{about}"
+                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Write about yourself..."
+                ></textarea>
+                <p
+                  th:if="${#fields.hasErrors('about')}"
+                  th:errors="*{about}"
+                  class="text-red-600 px-1 py-2"
+                ></p>
+              </div>
+              <div class="mt-3 flex justify-center space-x-3">
+                <button
+                  type="submit"
+                  class="bg-blue-700 px-2 py-2 rounded-lg text-white"
+                >
+                  Submit
+                </button>
+                <button
+                  type="reset"
+                  class="bg-red-500 px-2 py-2 rounded-lg text-white"
+                >
+                  Reset
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base::parent(~{::.service-page},~{::title},~{::script})}"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${loggedInUser} +'|Dashboard'">Document</title>
+  </head>
+  <body>
+    <div class="service-page">
+      <div th:if="${loggedInUser}">
+        <div th:insert="~{User/sidebar::sidebar}"></div>
+      </div>
+
+      <div class="pl-64">
+        <h1>welcome to user Dashboard</h1>
+      </div>
+    </div>
+    <script>
+      console.log("hello dashboard");
+    </script>
+  </body>
+</html>
